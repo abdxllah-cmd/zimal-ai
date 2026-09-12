@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="A friendly chat companion."
+  >
+
+  <title>Zimal-AI ✨</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js"></script>
+</head>
+
+<body>
+
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <main class="app-shell">
+
+    <!-- Header -->
+    <header class="topbar">
+
+      <div class="brand">
+
+        <div class="avatar">
+          ✨
+        </div>
+
+        <div>
+          <h1>Zimal-AI</h1>
+          <p class="presence">
+            <span class="status-dot"></span>
+            Online · local chat
+          </p>
+        </div>
+
+      </div>
+
+      <button
+        class="header-action"
+        id="newChat"
+        title="Start a new chat"
+        aria-label="Start a new chat"
+      >
+        + <span>New chat</span>
+      </button>
+
+      <button
+        class="icon-button"
+        id="historyButton"
+        title="Chat history"
+        aria-label="Chat history"
+      >
+        ☰
+      </button>
+
+    </header>
+
+    <aside class="history-panel hidden" id="historyPanel" aria-label="Chat history">
+      <div class="history-heading">
+        <div>
+          <p class="eyebrow">your conversations</p>
+          <h2>Chat history</h2>
+        </div>
+        <button class="close-history" id="closeHistory" aria-label="Close chat history">×</button>
+      </div>
+      <div class="history-list" id="historyList"></div>
+    </aside>
+
+
+    <!-- Chat -->
+    <section
+      class="chat-area"
+      id="chatArea"
+      aria-live="polite"
+    >
+
+      <div class="welcome-card" id="welcomeCard">
+
+        <div class="welcome-icon">
+          ✨
+        </div>
+
+        <p class="eyebrow">your personal chat corner</p>
+
+        <h2>What’s on your mind?</h2>
+
+        <p>
+          Say something. I promise I'm listening 👀
+        </p>
+
+        <div class="suggestions">
+
+          <button class="suggestion">
+            Heyyy 👋
+          </button>
+
+          <button class="suggestion">
+            Tell me something interesting
+          </button>
+
+          <button class="suggestion">
+            What are you doing? 😭
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- Typing indicator -->
+    <div
+      class="typing-container hidden"
+      id="typingIndicator"
+    >
+
+      <div class="message-avatar">
+        ✨
+      </div>
+
+      <div class="typing-bubble">
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+
+    </div>
+
+
+    <!-- Composer -->
+    <footer class="composer-area">
+
+      <form id="chatForm" class="composer">
+
+        <div class="composer-tools">
+          <button type="button" class="tool-button" id="emojiButton" aria-label="Add emoji" title="Add emoji">☺</button>
+          <button type="button" class="tool-button" id="voiceButton" aria-label="Use voice input" title="Voice input">◉</button>
+        </div>
+
+        <textarea
+          id="messageInput"
+          rows="1"
+          maxlength="2000"
+          placeholder="Type a message..."
+          autocomplete="off"
+        ></textarea>
+
+        <button
+          type="submit"
+          id="sendButton"
+          class="send-button"
+          aria-label="Send message"
+        >
+          <span>↑</span>
+        </button>
+
+      </form>
+
+      <div class="emoji-panel hidden" id="emojiPanel" aria-label="Emoji picker">
+        <button type="button">😭</button>
+        <button type="button">🫶🏻</button>
+        <button type="button">🥰</button>
+        <button type="button">😻</button>
+        <button type="button">☹️</button>
+        <button type="button">😓</button>
+        <button type="button">💔</button>
+        <button type="button">😂</button>
+      </div>
+
+      <p class="composer-note">
+        Enter to send · Shift + Enter for a new line · local & private ✨
+      </p>
+
+    </footer>
+
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
